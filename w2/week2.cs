@@ -5,32 +5,32 @@ using System.Collections.Generic;
 public class Week2
 {
 
-    public static int?[,] mem;
-    public static int[,] D;
-    public static int[,] R;
+    public static long?[,] mem;
+    public static long[,] D;
+    public static long[,] R;
 
     public static void Main(string[] args)
     {
-        var N = int.Parse(System.Console.ReadLine());
+        var N = long.Parse(System.Console.ReadLine());
         
         if (N > 1)
         {
-            R = new int[N, N - 1];
-            D = new int[N - 1, N];
-            mem = new int?[N, N];
-            for (int i = 0; i < N; i++)
+            R = new long[N, N - 1];
+            D = new long[N - 1, N];
+            mem = new long?[N, N];
+            for (long i = 0; i < N; i++)
             {
-                var nums = System.Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
-                for (int j = 0; j < nums.Length; j++)
+                var nums = System.Console.ReadLine().Split(" ").Select(x => long.Parse(x)).ToArray();
+                for (long j = 0; j < nums.Length; j++)
                 {
                     R[i, j] = nums[j];
                 }
             }
 
-            for (int i = 0; i < N - 1; i++)
+            for (long i = 0; i < N - 1; i++)
             {
-                var nums = System.Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
-                for (int j = 0; j < nums.Length; j++)
+                var nums = System.Console.ReadLine().Split(" ").Select(x => long.Parse(x)).ToArray();
+                for (long j = 0; j < nums.Length; j++)
                 {
                     D[i, j] = nums[j];
                 }
@@ -38,11 +38,11 @@ public class Week2
             var bestProfit = OPT_W(N - 1, N - 1);
             System.Console.WriteLine(bestProfit);
         } else{
-            System.Console.WriteLine(int.Parse(System.Console.ReadLine()) + int.Parse(System.Console.ReadLine()));
+            System.Console.WriteLine(long.Parse(System.Console.ReadLine()) + long.Parse(System.Console.ReadLine()));
         } 
     }
 
-    public static int OPT_W(int i, int j)
+    public static long OPT_W(long i, long j)
     {
         var solved = mem[i, j];
         if (solved.HasValue) return solved.Value;
