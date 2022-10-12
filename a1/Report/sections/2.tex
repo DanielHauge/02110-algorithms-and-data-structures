@@ -1,0 +1,44 @@
+\section{Solution}
+
+\begin{itemize}
+    \item Given $n$: total amount of cards as integer.
+    \item Given $C_i$: as a list of $n$ integers, $C_1, C_2,..., C_n$.
+    \item $h$ is defined as head index variable pointing to the leftmost card.
+    \item $t$ is defined as tail index variable pointing to the rightmost card.
+    \item $M_{i,j}$ is defined as solution to sub problem with the slice of $C$ where $i$ is the leftmost card and $j$ is the rightmost card.
+\end{itemize}
+
+Function to find best solution to sub problem where it is Donald's turn to pick a card is defined as follows:
+
+$$ S(h,t) = \begin{cases}
+    M_{h,t} & \text{if $M_{h,t}$ found} \\
+    0 & \text{if $h = t$} \\
+    \text{min}(C_h, C_t) & \text{if $|h-t| = 1$} \\
+    \text{max} \begin{cases}
+        C_{t-1} + S(h, t-2) \\
+        C_h + S(h+1,t-1)
+    \end{cases} & \text{if $C_h < C_t$ } \\
+    \text{max} \begin{cases}
+        C_t + S(h+1, t-1) \\
+        C_{h+1} + S(h+2,t)
+    \end{cases} & \text{if $C_h > C_t$ } \\
+    \text{max} \begin{cases}
+        C_{t-1} + S(h, t-2) \\
+        C_h + S(h+1,t-1) \\
+        C_t + S(h+1, t-1) \\
+        C_{h+1} + S(h+2,t)
+    \end{cases} & \text{otherwise} \\
+\end{cases} $$
+
+The functions captures the reuse of solutions of sub problems that have already been computed to avoid redudant computations, the 2 trivial bases cases, the case where leftmost card is highest, the case where rightmost card is highest and also if rightmost and leftmost are equal.
+
+All succesfull evaluations will be memorized: $M_{h,t} = S(h,t)$, such that the solution is found for any subsequent computation of $S(h,t)$. 
+
+The optimal solution of a given $C$ and $n$ is then found by the following:
+$$ Opt_C = \begin{cases}
+    \text{max}\begin{cases}
+        C_1 + S(2,n) \\
+        C_n + S(1,n-1)
+    \end{cases} & \text{if $n > 1$} \\
+    C_1 & \text{otherwise}
+\end{cases} $$

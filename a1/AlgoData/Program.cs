@@ -19,7 +19,7 @@ internal class Program
     {
         int val;
         if (M[h, t].HasValue) val = M[h, t].Value;
-        if (h == t) val = 0;
+        else if (h == t) val = 0;
         else if (t-h == 1) val = Math.Min(C[h], C[t]);
         else if (C[h] < C[t]) val = Math.Max(C[t - 1] + S(h, t - 2), C[h] + S(h + 1, t - 1));
         else if (C[h] > C[t]) val = Math.Max(C[t] + S(h + 1, t - 1), C[h + 1] + S(h + 2, t));

@@ -1,0 +1,40 @@
+\section{Analysis}
+
+\subsection{Time complexity}
+% This means the solution can be constructed by a chain of n/2 optimal solutions of sub problems.
+In traditional divide and conquer where sub problems are divided by two, thus creating a runtime complexity $O(n\text{ } log\text{ } n)$, this algorithm is a little different.
+Considering the context of the function $S(h,t)$ and the disregard of the otherwise and memory cases, then the following reoccurance applies.
+$$ T(n) \leq \begin{cases}
+    2T(n-2) + c & \text{if } n > 2 \\
+    c & otherwise
+\end{cases} $$ 
+
+As combining the results, ie. taking max of the two solutions does not take $n$ time, only c is computed for each node considering a recursion tree. 
+However, as the recursion is not dividing n by 2, the height is not $log \text{ } n$ but $\frac{n}{2}$.
+Therefore we can infer the total amount of leaf nodes to be: $2^{\frac{n}{2}}$. Summing over all levels:
+
+$$ T(n) \leq \sum_{i=0}^{\frac{n}{2}-1} 2^{i}c \leq c (2^{\frac{n}{2}} - 1) $$
+
+With this, the runtime $O(2^{\frac{n}{2}})$ can be speculated, with asymptotic runtime $O(2^{n})$.
+If we consider the otherwise case of $S(h,t)$, the runtime will be even worse than what is considered so far. 
+
+The saving grace for the algorithm, is dynamic programming techniques that makes runtime bound by the substructure solution space which is of size $n^2$.
+With the runtime bound by solution space, a better runtime complexity that we can infer is: $O(n^2)$ 
+
+Although the worst case runtime complexity is $O(n^2)$ thanks to memoization, in practise it is significantly better.
+The following diagram illustrates how the algorithm performs in practise given increasingly larger problems.
+
+\textit{N.B. Card numbers are randomly generated between 1 and 500000}
+
+DIAGRAM OF RUNS
+
+
+\subsection{Space complexity}
+
+Memory of solutions to subproblems will be stored in $M_{i,j}$.
+If every sub problem is evaluated and stored, then the resulting space complexity is O$(n^2)$.
+Worst case is very unlikely, and practically it is much less.
+
+In the same manner as time complexity, the following diagram is of space complexity in practise.
+
+DIAGRAM OF RUNS
