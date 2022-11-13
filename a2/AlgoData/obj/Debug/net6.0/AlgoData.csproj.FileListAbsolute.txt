@@ -1,0 +1,15 @@
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\bin\Debug\net6.0\AlgoData.exe
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\bin\Debug\net6.0\AlgoData.deps.json
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\bin\Debug\net6.0\AlgoData.runtimeconfig.json
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\bin\Debug\net6.0\AlgoData.dll
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\bin\Debug\net6.0\AlgoData.pdb
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\AlgoData.csproj.AssemblyReference.cache
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\AlgoData.GeneratedMSBuildEditorConfig.editorconfig
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\AlgoData.AssemblyInfoInputs.cache
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\AlgoData.AssemblyInfo.cs
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\AlgoData.csproj.CoreCompileInputs.cache
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\AlgoData.dll
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\refint\AlgoData.dll
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\AlgoData.pdb
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\AlgoData.genruntimeconfig.cache
+D:\repo\02110-algorithms-and-data-structures\a2\AlgoData\obj\Debug\net6.0\ref\AlgoData.dll
