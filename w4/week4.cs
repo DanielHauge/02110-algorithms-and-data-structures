@@ -46,7 +46,7 @@ public class Week4
             // Do nothing
         }
 
-        var totalFlow= Nodes[1].incomming.Sum( x=> Edges[x].flow );
+        var totalFlow = Nodes[1].incomming.Sum( x=> Edges[x].flow );
         System.Console.WriteLine(totalFlow);
         return;
     }

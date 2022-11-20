@@ -1,0 +1,15 @@
+D:\repo\02110-algorithms-and-data-structures\w10\w10\bin\Debug\net6.0\w10.exe
+D:\repo\02110-algorithms-and-data-structures\w10\w10\bin\Debug\net6.0\w10.deps.json
+D:\repo\02110-algorithms-and-data-structures\w10\w10\bin\Debug\net6.0\w10.runtimeconfig.json
+D:\repo\02110-algorithms-and-data-structures\w10\w10\bin\Debug\net6.0\w10.dll
+D:\repo\02110-algorithms-and-data-structures\w10\w10\bin\Debug\net6.0\w10.pdb
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\w10.csproj.AssemblyReference.cache
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\w10.GeneratedMSBuildEditorConfig.editorconfig
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\w10.AssemblyInfoInputs.cache
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\w10.AssemblyInfo.cs
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\w10.csproj.CoreCompileInputs.cache
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\w10.dll
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\refint\w10.dll
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\w10.pdb
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\w10.genruntimeconfig.cache
+D:\repo\02110-algorithms-and-data-structures\w10\w10\obj\Debug\net6.0\ref\w10.dll
