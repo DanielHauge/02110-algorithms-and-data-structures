@@ -21,10 +21,6 @@ namespace AlgoData
         {
             public int x;
             public int y;
-            public bool equals(Zone other)
-            {
-                return (x == other.x && y == other.y);
-            }
         }
 
         static void Main(string[] args)
@@ -88,7 +84,7 @@ namespace AlgoData
 
                 if (zone.O2 > 0)
                 {
-                    double maxDist = 0;
+                    long maxDist = 0;
                     int? maxDistI = null;
                     for (int j = 0; j < n; j++)
                     {
@@ -129,14 +125,15 @@ namespace AlgoData
                         var otherZone = zones[j];
                         var xDif = zone.x - otherZone.x;
                         var yDif = zone.y - otherZone.y;
-                        var gcd = GCD(Math.Max(xDif, yDif), Math.Min(xDif, yDif));
-                        if (Math.Abs(gcd) < 2) continue;
+                        var gcd = GCD(xDif, yDif);
+                        if (gcd < 2) continue;
                         var xStep = xDif / gcd;
                         var yStep = yDif / gcd;
                         var pointsBetween = 0;
-                        for (int l = 1; l < Math.Abs(gcd); l++)
+                        for (int l = 1; l < gcd; l++)
                         {
-                            if (cordIndex.ContainsKey(Tuple.Create(zone.x + xStep * l, zone.y + yStep * l)))
+                            var xy = Tuple.Create(otherZone.x + xStep * l, otherZone.y + yStep * l);
+                            if (cordIndex.ContainsKey(xy))
                             {
                                 pointsBetween++;
                             }
@@ -148,27 +145,9 @@ namespace AlgoData
                         }
                     }
                 }
-
-
-
             }
 
-
-
             var graph = construct_2d_graph(zones);
-
-
-            //Console.WriteLine();
-            //for (int i = 0; i < n; i++)
-            //{
-            //    for (int j = 0; j < n; j++)
-            //    {
-            //        Console.Write(graph[i, j]);
-            //        Console.Write(" ");
-            //    }
-            //    Console.WriteLine("");
-
-            //}
 
 
             var maxFlow = fulkerson_max_flow(graph, 0, n - 1);
@@ -194,7 +173,7 @@ namespace AlgoData
         {
             bool[] v = new bool[residual_graph.GetLength(0)];
             v[source_index] = true;
-            path_when_true[source_index] = -1;
+            path_when_true[source_index] = 0;
             Queue<int> q = new Queue<int>(new int[] { source_index });
 
             // Breath first search
@@ -253,14 +232,27 @@ namespace AlgoData
             return flow;
         }
 
-        static double dist_squared(Point a, Point b)
+        static long dist_squared(Point a, Point b)
         {
-            return Math.Sqrt((Math.Pow(a.x - b.x, 2) + Math.Pow(a.y - b.y, 2)));
+            return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
         }
 
         static int GCD(int a, int b)
         {
-            return b == 0 ? a : GCD(b, a % b);
+            a = Math.Abs(a);
+            b = Math.Abs(b);
+            while (a != 0 && b != 0)
+            {
+                if (a > b)
+                {
+                    a %= b;
+                }
+                else
+                {
+                    b %= a;
+                }
+            }
+            return a == 0 ? b : a;
         }
 
 
